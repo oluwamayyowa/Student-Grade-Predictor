@@ -28,7 +28,7 @@ extract['in_studygroup'] = extract['in_studygroup'].map({True: 1, False: 0})
 extract['difficulty'] = extract['difficulty'].map({'1 = Easy': 1, '2 = Medium': 2, '3 = Hard':3})
 
 
-#chceking adn updating values
+#checking and updating values
 extract['hours_studied'] = pd.to_numeric(extract['hours_studied'], errors = 'coerce')
 extract['hours_studied'] = extract['hours_studied'].fillna(extract['hours_studied'].median())
 
@@ -83,7 +83,7 @@ extract['test2_weighted'] = extract['test2_score'] * (extract['test2_confidence'
 
 extract = extract.drop(columns=['Id', 'Start time', 'Completion time', 'Email', 'Name'])
 
-print(extract) 
+
 
 # Load 
 con = sqlite3.connect('data.db')
